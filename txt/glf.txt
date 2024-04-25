@@ -1,0 +1,19 @@
+2/5/2024
+https://catlitter.minoa.cat/api/view/dcd9fdc22050454246bc.jpg
+https://catlitter.minoa.cat/api/view/a67bddf19a53f3089cbf.jpg
+https://catlitter.minoa.cat/api/view/c8c9ed5dc0479ec7137f.jpg
+---------------------------------------------------------------------
+
+
+We went golfing mew~ :3
+
+SiegedSec has acquired access to data on everyone who has ever used the service GLFconnect, one of the biggest providers for golfing lessons and courses.
+
+"We take security seriously" sike - blah blah blah
+
+Every golf course that uses GLFconnect's services have been compromised. We were able to exfiltrate their user database (full names, tokens, device info), source code, other server files, and much much meowr :3
+
+moar hax coming soon! ^-^
+
+LEAK: 
+https://mega.nz/file/IDM1zCZD#qXRwOSbN9ssAc9fogvt-I5WSkfIpVFf0DsfVf5sgf_c 
