@@ -31,15 +31,14 @@ h1 {
 
 #posts-container {
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust columns for responsiveness */
 	gap: 20px;
-	margin-top: 0; /* Remove top margin */
+	margin-top: 20px; /* Add top margin to move the cards higher up */
 }
 
 .card {
-	width: 210px;
+	width: 100%; /* Adjust width to fit container */
 	opacity: 0;
-	margin: -10px auto 10px auto; /* Adjust the margin values */
 	padding: 20px;
 	background-color: #323232;
 	border-radius: 20px;
