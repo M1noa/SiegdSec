@@ -55,9 +55,8 @@
         fetch(txtUrl)
             .then(response => response.text())
             .then(data => {
-                const formattedContent = data.replace(/\n/g, '<br>');
-                // Wrap URLs in <a> tags
-                const linkedContent = formattedContent.replace(/(https?:\/\/[^\n\s]+)/g, '<a href="$1" target="_blank">$1</a>');
+                const formattedContent = data.replace(/\n(https?:\/\/[^\n]+)/g, '\n<a href="$1" target="_blank">$1</a>');
+                const linkedContent = formattedContent.replace(/^(https?:\/\/[^\n]+)/gm, '<a href="$1" target="_blank">$1</a>');
                 const doxContentDiv = document.getElementById('dox-content');
 
                 // Set content with opacity 0
