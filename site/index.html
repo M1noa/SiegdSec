@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/ect/style.css">
+  <link rel="stylesheet" href="/ect/search.css">
+  <title>:3</title>
+</head>
+<body>
+  <h1>Unofficial SiegdSec website</h1>
+  <h2>Pastes ↷</h2>
+  <div class="searchcontainer">
+    <input type="text" placeholder="Search..." id="searchInput">
+    <div class="search"></div>
+  </div>
+  <div id="posts-container"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('searchInput');
+      const postsContainer = document.getElementById('posts-container');
+
+      // Fetch posts and render as cards
+      fetch('/api/posts')
+        .then(response => response.json())
+        .then(posts => {
+          // Store the original posts for resetting
+          const originalPosts = posts;
+
+          function renderPosts(filteredPosts) {
+            // Clear existing cards
+            postsContainer.innerHTML = '';
+
+            // Render filtered posts
+            filteredPosts.forEach(post => {
+              const card = document.createElement('div');
+              card.classList.add('card');
+
+              const title = document.createElement('h2');
+              title.textContent = post.title;
+
+              const user = document.createElement('p');
+              user.textContent = `by ${post.user}`;
+
+              const link = document.createElement('a');
+              link.href = post.link;
+              link.textContent = 'View';
+
+              card.appendChild(title);
+              card.appendChild(user);
+              card.appendChild(link);
+
+              postsContainer.appendChild(card);
+
+              // Add a class to trigger the fade-in animation
+              setTimeout(() => card.classList.add('loaded'), 100);
+            });
+          }
+
+          // Initial rendering of all posts
+          renderPosts(posts);
+
+          // Add event listener for search input
+          searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.toLowerCase();
+
+            // Filter posts based on the search term
+            const filteredPosts = originalPosts.filter(post =>
+              post.title.toLowerCase().includes(searchTerm) ||
+              post.user.toLowerCase().includes(searchTerm)
+            );
+
+            // Render the filtered posts
+            renderPosts(filteredPosts);
+          });
+        })
+        .catch(error => console.error('Error fetching posts:', error));
+    });
+  </script>
+</body>
+</html>

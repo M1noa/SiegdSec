@@ -1,0 +1,87 @@
+body {
+	font-family: 'Ubuntu Mono', monospace;
+	background: radial-gradient(200% 100% at bottom center, #f7dfb6, #e86da9, #865a87, #261b46);
+	background: radial-gradient(220% 105% at top center, #26385f 10%, #75517d 40%, #e86db5 65%, #f7f7b6);
+	background-attachment: fixed;
+	color: #c1bdc7;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	place-items: center;
+	min-height: 100vh;
+	animation: fadeInFromBottom 1s ease-out;
+	overflow: hidden;
+}
+
+@keyframes fadeInFromBottom {
+	from {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+h1 {
+	text-align: center;
+	margin-bottom: 0px;
+}
+
+#posts-container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+	margin-top: 0; /* Remove top margin */
+}
+
+.card {
+	width: 210px;
+	opacity: 0;
+	margin: -10px auto 10px auto; /* Adjust the margin values */
+	padding: 20px;
+	background-color: #323232;
+	border-radius: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	transition: transform 0.3s ease-in-out, opacity 1s ease-in-out;
+	animation: slideAndBlur 1.5s ease-out;
+}
+
+.card:hover {
+	transform: scale(1.05);
+}
+
+.card.loaded {
+	opacity: 1;
+}
+
+@keyframes slideAndBlur {
+	0% {
+		transform: translateY(100%) rotate(0deg);
+		opacity: 0;
+		backdrop-filter: blur(0px);
+	}
+	50% {
+		transform: translateY(0) rotate(0.5deg);
+		opacity: 1;
+		backdrop-filter: blur(5px);
+	}
+	100% {
+		backdrop-filter: blur(10px);
+	}
+}
+
+h2 {
+	margin-bottom: 10px;
+}
+
+a {
+	color: #cfbad8;
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+a:hover {
+	color: #e8e8e8;
+}

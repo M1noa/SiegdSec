@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+				body {
+						font-family: monospace;
+						background-color: #21273E;
+						color: #82F699;
+						padding: 20px;
+				}
+
+				#dox-content {
+						white-space: pre;
+						overflow-x: auto;
+						max-width: 100%;
+						font-weight: normal;
+						opacity: 0; /* Set initial opacity to 0 */
+						transition: opacity 6s; /* Add transition for opacity */
+				}
+		</style>
+</head>
+<body>
+		<div id="dox-content"></div>
+
+		<script>
+				document.addEventListener('DOMContentLoaded', function () {
+						// Function to get parameter value from the URL
+						function getParameterByName(name, url) {
+								if (!url) url = window.location.href;
+								name = name.replace(/[\[\]]/g, '\\$&');
+								const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+											results = regex.exec(url);
+								if (!results) return null;
+								if (!results[2]) return '';
+								return decodeURIComponent(results[2].replace(/\+/g, ' '));
+						}
+
+
+						const formParam = getParameterByName('bin');
+
+
+						const txtUrl = `/text/${formParam}`;
+
+						// Fetch the content of the txt
+						fetch(txtUrl)
+								.then(response => response.text())
+								.then(data => {
+										const formattedContent = data.replace(/\n/g, '<br>');
+										const doxContentDiv = document.getElementById('dox-content');
+
+										// Set content with opacity 0
+										doxContentDiv.innerHTML = formattedContent;
+
+										// Trigger reflow to apply initial opacity
+										doxContentDiv.offsetHeight;
+
+										// Gradually increase opacity to 1
+										doxContentDiv.style.opacity = 1;
+
+										// Set the page title to the 'form' parameter value
+										document.title = formParam;
+								})
+								.catch(error => {
+										console.error('Error fetching the txt:', error);
+								});
+				});
+		</script>
+</body>
+</html>
