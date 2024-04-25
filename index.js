@@ -36,6 +36,10 @@ app.get('/paste', (req, res) => {
 		res.sendFile(__dirname + '/site/paste.html');
 });
 
+app.get('/favicon.ico', (req, res) => {
+		res.sendFile(__dirname + '/favicon.ico');
+});
+
 
 const formsDirectory = path.join(__dirname, 'txt');
 const txtFiles = fs.readdirSync(formsDirectory).filter(file => path.extname(file) === '.txt');
