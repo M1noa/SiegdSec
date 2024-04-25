@@ -31,7 +31,7 @@ h1 {
 
 #posts-container {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust columns for responsiveness */
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust columns for responsiveness */
 	gap: 15px; /* Adjust gap between cards */
 	margin-top: 20px; /* Add top margin to move the cards higher up */
 	padding: 0 15px; /* Add padding to the container */
