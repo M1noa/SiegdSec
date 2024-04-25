@@ -1,0 +1,27 @@
+11/26/2023
+
+SiegedSec is here for a special Halloween Hack!
+
+This special hack affects.... (drum roll please)
+BEZEQ! Israel's largest telecommunications company!
+We have brought several surprises for Bezeq, we hope they enjoy our treats~
+
+For our first treat to Bezeq, we have exfiltrated their customer database, containing nearly 50,000 customer full names, email addresses, and phone numbers. 
+
+Our second treat affects the entirety of Israel's infrastructure, we have accessed the portal that controls devices from around the country, and we've shut them down~ :3 This also affects devices from the Hungary, Finland, and U.S Embassies in Israel. so exciting amirite? 
+
+Last but not least, our third and final treat, we've used Bezeq's campaign management portal to send a fun little email to Bezeq customers! >w< 
+
+We hope you enjoy this special halloween hack! We have lots more in mind for future hacks so stay tuned~
+
+LEAK: 
+https://catlitter.minoa.cat/api/view/b50800994e919a9f48b4.rar
+https://mega.nz/file/bQxxXCoR#FQhNQXWNiZvBtpd6KP14HUUMDRd0lR4FiijOv_Sw1eU
+https://files.catbox.moe/xagna1.json
+
+#OpIsrael
+
+------
+
+P.S: While we're here, we'd like to recommend this blog post for an interesting read on the hack of Russia's second biggest insurance company :3
+https://maia.crimew.gay/posts/rosgosstrakh-hack/
