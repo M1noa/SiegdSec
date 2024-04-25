@@ -20,6 +20,15 @@
             opacity: 0; /* Set initial opacity to 0 */
             transition: opacity 6s; /* Add transition for opacity */
         }
+
+        #dox-content a {
+            color: #D1BEF0; /* Link color */
+            text-decoration: none; /* Remove underline */
+        }
+
+        #dox-content a:hover {
+            text-decoration: underline; /* Add underline on hover */
+        }
     </style>
 </head>
 <body>
@@ -48,7 +57,7 @@
             .then(data => {
                 const formattedContent = data.replace(/\n/g, '<br>');
                 // Wrap URLs in <a> tags
-                const linkedContent = formattedContent.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>');
+                const linkedContent = formattedContent.replace(/(https?:\/\/[^\n\s]+)/g, '<a href="$1" target="_blank">$1</a>');
                 const doxContentDiv = document.getElementById('dox-content');
 
                 // Set content with opacity 0
